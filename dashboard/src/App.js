@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.jsx
+import React from 'react';
+import EVMarketSharePie from './components/EVMarketSharePie';
+import ProjectedEVGrowthBar from './components/ProjectedEVGrowthBar';
+import EVMarketSizeLine from './components/EVMarketSizeLine';
+import './App.css'; // Import the CSS file
+import TypesEVBar from './components/TypesEVBar';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <h1 className='text-2xl font-bold'>EV Market Data Visualization</h1>
+      <div className="chart-container">
+        <div className="chart">
+          <EVMarketSharePie />
+        </div>
+        <div className="chart">
+          <ProjectedEVGrowthBar />
+        </div>
+        <div className="chart">
+          <EVMarketSizeLine />
+        </div>
+        <div className="chart">
+          <TypesEVBar />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
